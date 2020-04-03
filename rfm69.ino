@@ -1,3 +1,6 @@
+//RFM69
+//Errors will be sent using "!ERR" Keyword to Node-Red
+
 /*
 
    INIT RADIO
@@ -24,6 +27,19 @@ void initrfm() {
 
 /*
 
+   RADIO SEND
+
+
+*/
+
+void sendrfm(int id) {
+  //Nodeid will be different from Data Node ID.
+  radio.sendWithRetry(id, &thedata, sizeof(Payload));
+  delay(100);
+}
+
+/*
+
    RADIO LOOP
 
 
@@ -32,49 +48,31 @@ void initrfm() {
 
 void rfmloop() {
 
-
+    //RF DATA IN
   if (radio.receiveDone())
   {
     int rssi = radio.RSSI;
 
     if ((radio.DATALEN) != sizeof(Payload)) {
-      if(DBG)Serial.print("RFM69 Invalid payload received, not matching Payload struct!");
-      if(DBG)Serial.print(" Expected: "); 
-      if(DBG)Serial.print(sizeof(Payload)); 
-      if(DBG)Serial.print("Received: ");  
-      if(DBG)Serial.print(radio.DATALEN);
-      if(DBG)Serial.println();
-    }
-    // else
-    //{
+      Serial.println("!ERR rfm69_rx RFM69 payload size not match");
+    }else{
     thedata = *(Payload*)radio.DATA;
-
-    //#######################################################################
-    //RF DATA IN
-
-
     rxr = true;
-    //##############################################################
+    //Data will be sent to Node-Red in Main Loop     
+    }
 
-    if(DBG) Serial.print("RFM69 Message [From]: ");
-    if(DBG)Serial.print(thedata.id);
-    if(DBG)Serial.print(" [Data1]: ");
-    if(DBG)Serial.print(thedata.data1);
-    if(DBG) Serial.print(" [Data2]: ");
-    if(DBG)Serial.print(thedata.data2);
-    if(DBG)Serial.print(" [RSSI]: ");
+    if(DBG)Serial.print("Node [RSSI]: ");
     if(DBG)Serial.print(rssi);
-    
-    // }
 
     if (radio.ACKRequested())
     {
       radio.sendACK();
     if(DBG)Serial.print("  [ACK Sent]");
     }
+     
      if(DBG)Serial.println();
     
-    blink(LED, 2);
+    
   }
 
 }
