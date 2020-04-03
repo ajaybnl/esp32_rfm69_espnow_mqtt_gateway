@@ -22,14 +22,16 @@ Fully Working, Both RFM69HCW & ESPNOW Simultanious With TX and RX
 ### Current Version : 
 - 0.5 Fully Tested & Working (SEE Node-red Code Below)
 
+- This gateway should work with all pin compatible RFM69 Modules, if the RFM69 Library supports them.
 
 
 
 
 
 
-### CONNECTING RFM69 TO ESP32:
-[rfm69](https://i.ibb.co/Zf8KQbQ/rfm69hcw.jpg)
+
+### CONNECTING RFM69HCW TO ESP32:
+![rfm69](https://i.ibb.co/Zf8KQbQ/rfm69hcw.jpg)
 
 
 
@@ -44,10 +46,10 @@ Fully Working, Both RFM69HCW & ESPNOW Simultanious With TX and RX
 
 * Since ESP32 is 3.3v MCU, so no Pin Conversion Needed, We can connect it directly.
 
-#### NOTE: Don't Power the RFM69 Without attaching Antenna
+#### NOTE: Don't Power the RFM69HCW Without attaching Antenna
 
 ### Library Setup:
-- The Library RFM69 is Connected to SPI3 (ESP32.GPIO2 on RFM69.DIO0 (Also Called IRQ))
+- The Library RFM69HCW is Connected to SPI3 (ESP32.GPIO2 on RFM69HCW.DIO0 (Also Called IRQ))
 - No More Setup needed (Debug: Check RFM69.h for More Info)
 
 
