@@ -23,10 +23,14 @@ Fully Working, Both RFM69HCW & ESPNOW Simultanious With TX and RX
 - 0.5 Fully Tested & Working (SEE Node-red Code Below)
 
 
+
+
+
+
+
 ### CONNECTING RFM69 TO ESP32:
 - VCC: Power it with 3.3V (Not 5V Compatible)
-### SPI PINS: 
-#### ESP  =   RFM69
+- SPI PINS: 
  - MOSI   =   MOSI
  - MISO   =   MISO
  - SCK   =   SCK
