@@ -37,10 +37,14 @@ Fully Working, Both RFM69HCW & ESPNOW Simultanious With TX and RX
 
 
 - VCC: Power it with 3.3V (Not 5V Compatible)
-- SPI PINS: 
+- SPI PINS:
+* RFM69 SIDE   ESP32 SIDE
  - MOSI   =   MOSI
  - MISO   =   MISO
  - SCK   =   SCK
+ - DIO0  =   GPIO2
+ - GND   =   GND
+ - VCC  =  3.3V
 
 * ESP32 SPI PINS (SPI3 is on BLUE Pins in the image below) 
 
