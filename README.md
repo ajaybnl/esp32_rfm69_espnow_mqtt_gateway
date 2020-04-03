@@ -29,6 +29,11 @@ Fully Working, Both RFM69HCW & ESPNOW Simultanious With TX and RX
 
 
 ### CONNECTING RFM69 TO ESP32:
+[rfm69](https://i.ibb.co/Zf8KQbQ/rfm69hcw.jpg)
+
+
+
+
 - VCC: Power it with 3.3V (Not 5V Compatible)
 - SPI PINS: 
  - MOSI   =   MOSI
@@ -38,6 +43,8 @@ Fully Working, Both RFM69HCW & ESPNOW Simultanious With TX and RX
 * ESP32 SPI PINS (SPI3 is on BLUE Pins in the image below) 
 
 * Since ESP32 is 3.3v MCU, so no Pin Conversion Needed, We can connect it directly.
+
+#### NOTE: Don't Power the RFM69 Without attaching Antenna
 
 ### Library Setup:
 - The Library RFM69 is Connected to SPI3 (ESP32.GPIO2 on RFM69.DIO0 (Also Called IRQ))
