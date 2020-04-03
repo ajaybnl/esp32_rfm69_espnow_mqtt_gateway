@@ -24,9 +24,9 @@ Fully Working, Both RFM69HCW & ESPNOW Simultanious With TX and RX
 
 ## ESP32 Pinout: 
 
-```
+
 ![ESP32 SPI Pinout](https://i.ibb.co/6bB3b4R/esp32-spi-pins.jpg)
-```
+
 
 
 
