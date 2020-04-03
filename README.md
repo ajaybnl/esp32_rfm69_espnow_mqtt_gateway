@@ -1,18 +1,24 @@
 ## A MQTT GATEWAY of RFM69 &amp; ESP-NOW based on ESP32
 
-You Need:
+# Features:
+Both RFM69HCW & ESPNOW Simultanious With TX and RX
+No Reboot after ESPNOW Rx.
+
+
+# You Need:
 1x RFM69HCW
 1x ESP32
-
-(Optional):
-Raspberry Pi with Node-Red
-
+1x Raspberry Pi (Any Linux Based Board) with Node-Red
 
 
 # Libraries:
 RFM69 By LowPowerLabs (https://github.com/LowPowerLab/RFM69)
 PubSubClient (https://github.com/knolleary/pubsubclient)
 ArduinoJson (https://github.com/bblanchon/ArduinoJson)
+
+
+
+Current Version : 0.5 Fully Tested & Working (SEE Node-red Code Below)
 
 
 
