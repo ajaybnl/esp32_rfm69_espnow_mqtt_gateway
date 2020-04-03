@@ -1,11 +1,23 @@
-# esp32_rfm69_espnow_mqtt_gateway
+## A MQTT GATEWAY of RFM69 &amp; ESP-NOW based on ESP32
 
-A MQTT GATEWAY of RFM69 &amp; ESP-NOW based on ESP32
+You Need:
+1x RFM69HCW
+1x ESP32
 
-Use Latest RFM69 Library (From LowPowerLabs)
-https://github.com/LowPowerLab/RFM69
+(Optional):
+Raspberry Pi with Node-Red
 
-ESP32 Pinout: https://ibb.co/sQH0QFv
+
+
+# Libraries:
+RFM69 By LowPowerLabs (https://github.com/LowPowerLab/RFM69)
+PubSubClient (https://github.com/knolleary/pubsubclient)
+ArduinoJson (https://github.com/bblanchon/ArduinoJson)
+
+
+
+# ESP32 Pinout: 
+![ESP32 SPI Pinout](https://i.ibb.co/6bB3b4R/esp32-spi-pins.jpg)
 
 
 
