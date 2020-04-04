@@ -6,7 +6,7 @@
  * Created by Ajay Kumar 
  * Email: ajaybnl@gmail.com
  * 
- * 
+ * v0.5
  * 
  * Dev Url : https://github.com/ajaybnl/esp32_rfm69_espnow_mqtt_gateway
  * 
@@ -34,11 +34,13 @@ void setup() {
 
 
 //This is a ESPNOW & RFM69 Gateway Project, 
-//So i will be using it on my Raspberry Pi, On Serial Messaging.
+//So i am using it on my Raspberry Pi, On Serial Messaging.
+
+// For Raspberry Mode: (USEMQTT = false)
 //Compile it on ESP32, 80Mhz Clock Freq. (Raspberry Serial Errors on High Frequency Clock)
 
-  //Debug Serial (DBG=true)
-    Serial.begin(9600);
+  //Debug/Raspberry Serial
+     Serial.begin(9600);
 
 
 
@@ -62,8 +64,18 @@ void setup() {
 void loop() {
   //RFM69 Rx Loop
   rfmloop();
-  checkserialin();
 
+  if(USEMQTT){
+  //Mqtt Mode
+  }else{
+  //Raspberry Serial Mode
+
+  //Check Serial Command
+  
+  checkserialin();
+  }
+
+  
 //Received Some Data
   if (rxe || rxr) {
     
@@ -75,6 +87,18 @@ void loop() {
     
     rxe = false;
     rxr = false;
+
+ if(USEMQTT){
+//Mqtt Mode
+
+//Turn on WIFI & send mqtt command and then disconnect.
+  wifionsendmqtt();
+
+//Re-Init ESP-NOW  
+  initespnow();
+   
+  }else{
+//Raspberry Serial Mode
     
 //Json Output    
 // Write like this : {"id":value,"string1":"strvalue"}
@@ -85,6 +109,8 @@ Serial.print(thedata.data1);
 Serial.print(",\"data2\":");
 Serial.print(thedata.data2);
 Serial.println("}");   
+  }
+  
   }
 
 

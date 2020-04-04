@@ -1,8 +1,12 @@
 void checkserialin() {
 
-  //Message like
-  //{"type":1,"id":2,"data1":768,"data2":0}
-
+  //Serial Message format:
+  //Type:0 = RFM69
+  //Type:1 = ESPNOW
+  // To Send RFM69 Message : {"type":0,"id":21,"data1":70,"data2":102}
+  // To Send ESPNOW Message : {"type":1,"id":50,"data1":70,"data2":102}
+  //NodeID will be set on the Nodes Side (Any Value)
+  
   Serial.setTimeout(100);
   if( Serial.available()){
     
