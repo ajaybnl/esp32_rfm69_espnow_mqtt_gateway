@@ -4,7 +4,7 @@
 Fully Working, Both RFM69HCW & ESPNOW Simultanious With TX and RX
 Defaultly, it works with serial, with attached to Raspberry, but you can also use it with MQTT & WIFI Version without Raspberry Pi.
 
--To use it with MQTT (WIFI) , Change the #define USESERIAL 'true' to 'false' in the include.h file.
+-To use it with MQTT (WIFI) , Change the #define USEMQTT 'false' to 'true' in the include.h file.
 
 
 ## You Need:
